@@ -1,0 +1,468 @@
+body{
+	position: relative;
+	background: #fff;
+    font-family: Vollkorn-Regular;
+}
+@font-face {
+	src: url(../fonts/kalpurush.ttf);
+	font-family: kalpurush;
+}
+@font-face {
+	src: url(../fonts/SolaimanLipi.ttf);
+	font-family: SolaimanLipi;
+}
+@font-face{
+    src: url(../fonts/RussoOne-Regular.ttf);
+    font-family: Russo One;
+}
+@font-face{
+    src: url(../fonts/ZillaSlab-Regular.ttf);
+    font-family: Zilla Slab;
+}
+@font-face{
+    src: url(../fonts/Vollkorn-Regular.ttf);
+    font-family: Vollkorn-Regular;
+}
+
+@font-face{
+    src: url(../fonts/Vollkorn-Bold.ttf);
+    font-family: Vollkorn-Bold;
+}
+
+.divider {
+	text-align: center;
+}
+.divider img {
+    width: 238px;
+    padding: 25px 0;
+}
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 1000;
+}
+.loading-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    color: #604908;
+    font-size: 56px;
+}
+.wrapper-area {
+    padding-bottom: 50px;
+}
+.wrapper-area-body {
+    padding-top: 50px;
+}
+.wrapper-area-body-right-card-heading.border-bottom {
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 5px 5px 0 0;
+    font-size: 24px;
+}
+/* end default styles*/
+
+/* header-area */
+.header-area-top {
+    font-family: Russo One;
+}
+.mobile-menu-area {
+    width: 100%;
+    display: none;
+}
+.header-logo-mobile img {
+    width: 65px;
+    box-shadow: 0 0 16px #fff;
+    -webkit-box-shadow: 0 0 16px #fff;
+    border-radius: 50%;
+    background: #fff;
+}
+.header-mobile-menu-btn {
+    padding: 16px 0;
+}
+.header-area-bottom {
+    -webkit-transition: all 2s ease;
+    transition: all 2s ease;
+}
+.header-area-bottom .navbar{
+    background: #604908 !important;
+    border-bottom: 7px solid #C8C41A;
+}
+.header-logo {
+    position: relative;
+    width: 112px;
+    height: 53px;
+    z-index: 2;
+}
+.header-logo a.navbar-brand {
+    margin-right: 0;
+    /* border: 8px solid #CA0815; */
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+}
+.header-logo a.navbar-brand img {
+    width: 112px;
+}
+/* end header-area */
+
+/* start slider-area */
+
+.slider-area {
+    position: relative;
+}
+.slider-area > .flexslider {
+    border: 0;
+    margin: 0;
+    border-radius: 0;
+}
+.slider-area li.flex-nav-next a.flex-next {
+    right: 0;
+}
+.slider-area > .flexslider >.flex-viewport {
+    max-height: 400px;
+}
+.slider-area > .flexslider > .flex-control-nav {
+    bottom: 0;
+}
+.slider-area > .flexslider > .flex-control-nav a {
+    width: 15px;
+    height: 15px;
+    border-radius: 0;
+}
+.slider-area-notice {
+    position: absolute;
+    right: 60px;
+    top: 35px;
+    width: 290px;
+    height: 400px;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 5px 6px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 5px 6px rgba(0,0,0,0.4);
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+}
+.slider-area-notice-title h3 {
+    text-align: center;
+    padding: 8px 6px;
+    margin: 0;
+    background: #343A40;
+    color: #fff;
+}
+.slider-area-notice-body {
+    max-height: 350px;
+    overflow-y: scroll;
+}
+/* end slider-area */
+
+/* start main-four-links-single */
+.main-four-links {
+    padding: 50px 0;
+}
+.main-four-links-single a {
+    text-align: center;
+}
+.main-four-links-single a .card-body {
+    min-height: 110px;
+}
+.main-four-links-single a img {
+    width: 70px;
+}
+.main-four-links-single a i {
+    font-size: 52px;
+}
+/* end main-four-links-single */
+
+/* start facts-counting-area */
+.facts-counting-area {
+    padding: 50px 0;
+    background: linear-gradient(0deg, rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../images/campus.jpg);
+    color: #fff;
+    background-position: center;
+    text-align: center;
+}
+/* end facts-counting-area */
+
+/* start notice-event-area */
+.notice-event-area {
+    padding: 50px 0;
+}
+.notice-event-area .card-body {
+    max-height: 339px;
+    overflow: auto;
+}
+.notice-event-area .card-body li a {
+    color: #343A40;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd !important;
+}
+.notice-event-area .card-body li a:hover {
+    background: #ddd;
+}
+/* end notice-event-area */
+
+/* start departments-area */
+.dept-area {
+    padding: 50px 0;
+    background: linear-gradient(0deg,rgba(0,0,0,0.7),rgba(0, 0, 0,0.7)), url(../images/campus.jpg);
+    background-size:cover;
+    background-position: center;
+}
+.dept-area-single {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+.dept-area-img {
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px dotted #fff;
+    box-shadow: 0px 0px 8px #333;
+}
+.dept-area-title {
+    padding: 25px 0 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+.dept-area .owl-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+}
+.dept-area .owl-nav button.owl-prev,.dept-area .owl-nav button.owl-next {
+    left: -40px;
+    position: absolute;
+    color: #fff;
+}
+.dept-area .owl-nav button.owl-next {
+    right: -40px;
+    left: auto;
+}
+/* end departments-area */
+
+/* start contact-us-area*/
+.contact-us-area {
+    padding: 50px 0;
+}
+.contact-us-map {
+    overflow: hidden;
+    border: 3px dotted #aaa;
+}
+.contact-us-right i {
+    padding: 7px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.contact-us-right h4, h6 {
+    margin: 0 0 20px;
+}
+/* end contact-us-area*/
+
+/* page about tecn*/
+.section-top-banner {
+    position: relative;
+    max-height: 250px;
+    overflow: hidden;
+    background: linear-gradient(0deg, rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(../images/campus-img.jpg);
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+}
+.section-top-banner img {
+    width: 100%;
+}
+.section-top-banner-links {
+    min-height: 250px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.section-top-banner-links ol.breadcrumb {
+    background: transparent;
+    padding: 0;
+    color: #fff;
+}
+.section-top-banner-links ol.breadcrumb li.breadcrumb-item.active {
+    color: #ddd;
+}
+.section-top-banner-links ol.breadcrumb a {
+    color: #fff;
+}
+.about-area-body {
+    padding: 50px 0;
+}
+/* end page about tecn*/
+
+
+
+/* start footer-area */
+.footer-area {
+    color: #fff; 
+}
+.footer-area-top {
+    background: rgba(96,73,8,0.9);
+    color: #fff;
+    padding: 25px 0;
+    border-bottom: 1px solid #fff;
+}
+.footer-area-top-single li.list-group-item {
+    background: transparent;
+    padding: 3px;
+    border-bottom: 1px solid #fff;
+    border-top: 0;
+}
+.footer-area-top-single li.list-group-item a {
+    color: #fff;
+    font-size: 14px;
+    display: block;
+    margin: 0 0 5px;
+}
+.footer-area-bottom {
+    background: rgba(96,73,8,1);
+    color: #fff;
+    padding: 15px;
+}
+.footer-bottom-left ul {
+    text-decoration: none;
+    list-style: none;
+    clear: both;
+    margin: 0;
+}
+.footer-bottom-left ul li {
+    float: left;
+}
+.footer-bottom-left ul li a {
+    color: #fff;
+    margin: 0 5px;
+    display: inline-block;
+    text-decoration: none;
+}
+.footer-bottom-right a {
+    display: inline-block;
+    background: #fff;
+    padding: 2px 7px;
+    border-radius: 2px;
+    box-shadow: 0px 0px 5px #fff;
+    -webkit-box-shadow: 0px 0px 5px #fff;
+    margin-left: 4px;
+}
+/* end footer-area */
+
+
+
+/* start coming-soon */
+.coming-soon {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(../images/black-and-white-buildings-city-33540.jpg);
+    background-size: cover;
+    background-position: center;
+    /* filter: blur(4px); */
+    /* -webkit-filter: blur(4px); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.coming-logo {
+    text-align: center;
+    padding: 30px 0;
+}
+.coming-logo img {
+    width: 350px;
+}
+.clg-title {
+    font-size: 42px;
+    color: #fff;
+    text-align: center;
+    font-family: SolaimanLipi;
+}
+.coming-soon-text {
+	text-align: center;
+}
+.coming-soon-text h1 {
+	color: #fff;
+}
+.coming-soon-text h5 {
+	color: #fff;
+}
+.notice {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.8));
+    color: #333;
+    border-radius: 6px;
+    max-height: 200px;
+    min-height: 170px;
+    max-width: 185px;
+}
+.notice h4 {
+    padding: 5px 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-family: solaimanlipi;
+}
+.notice a {
+    display: inline-block;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 1s ease;
+}
+/*.notice a:hover {
+    color: #000;
+    background: #fff;
+}*/
+/* end coming-soon */
+
+/* start notice board */
+.notice-area-body {
+    padding: 50px 0;
+}
+/*.notice-card-right-body {
+	max-height: 300px;
+	overflow-y: auto;
+}*/
+.notice-card-heading {
+    padding: 15px 0;
+    border-radius: 5px 5px 0 0;
+
+}
+.notice-single {
+    padding: 0px 0 15px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+.notice-single:hover {
+    background: #f1f1f1;
+}
+.notice-single a {
+	text-decoration: none;
+	color: #333;
+}
+.notice-single-title {
+    font-size: 14px;
+    padding-top: 7px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+a.notice-single-title:hover {
+    text-decoration: none;
+    color: #C8C41A;
+}
+/* end notice board */
