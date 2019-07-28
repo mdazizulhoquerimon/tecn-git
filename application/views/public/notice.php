@@ -41,7 +41,6 @@
 							      	<div class="tab-pane fade show active" id="news_and_events" role="tabpanel" aria-labelledby="news_and_events">
 						   				<h5 class="notice-card-heading border-bottom text-center text-light bg-dark pb-2 mb-4">News & Events</h5>
 						   				<div class="notice-card-right-body">
-						   					
 											<table id="notice-card-right-body-table" class="notice-card-right-body-table display w-100 dataTable table-bordered">
 										        <thead>
 										            <tr>
@@ -70,33 +69,67 @@
 						   				</div> 
 							      	</div>
 						      		<!-- start Upcoming Events -->
-						      		<div class="tab-pane fade show active" id="notice" role="tabpanel" aria-labelledby="notice">
-						   				<h5 class="notice-card-heading border-bottom pb-2 mb-4">Notice</h5>
+						      		<div class="tab-pane fade" id="notice" role="tabpanel" aria-labelledby="notice">
+						   				<h5 class="notice-card-heading border-bottom text-center text-light bg-dark pb-2 mb-4">Notice</h5>
 						   				<div class="notice-card-right-body">
-						   					<div class="notice-single">
-						   						<a href="#" title="" class="text-d-none">
-						   							<div class="notice-single-date">17 June 2019</div>
-						   							<div class="notice-single-title">জরুরী বিজ্ঞপ্তি: বাংলাদেশ প্রকৌশল বিশ্ববিদ্যালয়-এ অনুষ্ঠিতব্য ১১ তম সমাবর্তন প্রসংগে</div>
-						   						</a>
-						   					</div>
-				   							<?php
-				   							 //print_r($all_notice);
-				   							 foreach ($all_news_events as $key => $n) {
-				   							?>
-						   					<div class="notice-single">
-						   						<a href="<?php echo base_url();?>notice/single_notice/<?php echo $n['id'];?>"  title="<?php echo $n['date_time'];?>" class="notice-single-title" target="_blank">
-									            	<div class="notice-single-date"><?php echo $n['date_time'];?></div>
-						   							<div class="notice-single-title"><?php echo $n['title'];?></div>
-						   						</a>
-						   					</div>
-								            <?php
-				   							}
-				   							?>
+											<table id="all-notice" class="notice-card-right-body-table display w-100 dataTable table-bordered">
+										        <thead>
+										            <tr>
+										                <th class="text-center">Date</th>
+										                <th class="text-center">Description</th>
+										            </tr>
+										        </thead>
+										        <tbody>
+						   							<?php
+						   							 //print_r($all_notice);
+						   							 foreach ($all_notice as $key => $n) {
+						   							?>
+										            <tr>
+										                <td class="text-center"><?php echo $n['date_time'];?></td>
+										                <td>
+										                	<a href="<?php echo base_url();?>notice/single_notice/<?php echo $n['id'];?>"  title="<?php echo $n['date_time'];?>" class="notice-single-title" target="_blank">
+										                		<?php echo $n['title'];?>
+										                	</a>
+										                </td>
+										            </tr>
+										            <?php
+						   							}
+						   							?>
+										        </tbody>
+										    </table>
 						   				</div> 
 							      	</div>
 							      	<!-- end Upcoming Events -->
 							      	<div class="tab-pane fade" id="downloads" role="tabpanel" aria-labelledby="downloads">
-										Downloads
+										
+										<h5 class="notice-card-heading border-bottom text-center text-light bg-dark pb-2 mb-4">Downloads</h5>
+						   				<div class="notice-card-right-body">
+											<table id="all-notice-download" class="notice-card-right-body-table display w-100 dataTable table-bordered">
+										        <tbody>
+						   							<?php
+						   							 //print_r($all_notice);
+						   							// foreach ($all_notice as $key => $n) {
+						   							?>
+										            <tr>
+										                <td>
+										                	<a href="#"  title="Admission Form" class="notice-single-title" target="_blank">
+										                		Admission Form
+										                	</a>
+										                </td>
+										            </tr>
+										            <tr>
+										                <td>
+										                	<a href="#"  title="Library Card Form" class="notice-single-title" target="_blank">
+										                		Library Card Form
+										                	</a>
+										                </td>
+										            </tr>
+										            <?php
+						   							//}
+						   							?>
+										        </tbody>
+										    </table>
+						   				</div> 
 							      	</div>
 							    </div>
 				   			</div>

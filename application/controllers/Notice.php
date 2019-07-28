@@ -5,7 +5,7 @@ class Notice extends CI_Controller {
 
 	public function __construct() {
 	    parent::__construct();
-	    $this->load->model('common_model');
+	    $this->load->model('common');
 	}
 	public function index()
 	{
@@ -17,7 +17,8 @@ class Notice extends CI_Controller {
 
 		$this->db->where("notice_type",1);
 		$this->db->where("trash",0);
-		$data['all_notice'] = $this->common_model->getAll('notice','id','desc');
+    	$this->db->order_by('id','desc');
+		$data['all_notice'] = $this->db->get('notice')->result_array();
 
 		$this->load->view('public/head');
 		$this->load->view('public/header');
@@ -27,7 +28,7 @@ class Notice extends CI_Controller {
 	public function single_notice($id=null)
 	{
 
-		$data['single_notice'] = $this->common_model->getSpecificRows('notice','id',$id);
+		$data['single_notice'] = $this->common->getSpecificRows('notice','id',$id);
 
 		$this->load->view('public/head');
 		$this->load->view('public/header');

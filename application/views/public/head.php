@@ -13,6 +13,7 @@
     <meta name="Author" content="Mizanur Rahman">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/jquery.simplyscroll.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/uikit.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/datatables.min.css">
@@ -26,6 +27,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/responsive.css">
 
     <script src="<?php echo base_url();?>assets/js/jquery-3.4.1.min.js"></script> 
+	<script src="<?php echo base_url();?>assets/js/jquery.simplyscroll.min.js"></script>
 	<script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
     <!-- <script src="js/jquery.min.js"></script>-->
     <script src="<?php echo base_url();?>assets/js/jquery-ui.min.js"></script>

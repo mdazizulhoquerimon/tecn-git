@@ -25,27 +25,33 @@
 			<h3>Notice</h3>
 		</div>
 		<div class="slider-area-notice-body">
-			<ul class="list-group list-group-flush">
-
-			  	<li>
-			  		<a class="list-group-item" href="" title="" target="_blank">
-			  			<div class="slider-notice-date"></div>
-			  			<div class="slider-notice-title"></div>
+			<ul class="list-group list-group-flush" id="scroller">
+				<?php 
+				//print_r($all_news_events);
+				foreach($all_notice as $n){
+				?>
+			  	<li><a class="list-group-item" href="<?php echo base_url();?>notice/single_notice/<?php echo $n['id'];?>" title="" target="_blank">
+			  			<div class="slider-notice-date">
+			  				<span class="slider-notice-date-day">
+			  					<?php echo date('d M',strtotime($n['date']));?>
+			  				</span>
+			  				<span class="slider-notice-date-year">
+			  					<?php echo date('Y',strtotime($n['date']));?>
+			  				</span>
+			  					
+		  				</div>
+			  			<div class="slider-notice-title"><?php echo $n['title'];?></div>
 			  			<div class="clearfix"></div>
 			  			<!-- <h6 class="card-title m-0"><?php echo $n['title'];?></h6>
 						<p class="card-text"><small class="text-muted"><?php echo $n['date'];?></small></p> -->
 			  		</a>
 			  	</li>
-				<?php 
-				//print_r($all_news_events);
-				foreach($all_notice as $n){
-				?>
-			  	<li>
+			  	<!-- <li>
 			  		<a class="list-group-item" href="<?php echo base_url();?>notice/single_notice/<?php echo $n['id'];?>" title="" target="_blank">
 			  			<h6 class="card-title m-0"><?php echo $n['title'];?></h6>
 						<p class="card-text"><small class="text-muted"><?php echo $n['date'];?></small></p>
 			  		</a>
-			  	</li>
+			  	</li> -->
 			  	<?php
 				}
 			  	?>
@@ -61,10 +67,10 @@
 		<div class="row">
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 				<div class="main-four-links-single">
-					<a href="#" title="" class="text-decoration-none">
-						<div class="card text-white bg-secondary mb-2">
-						  	<div class="card-header"><h4 class="m-0">About TECN</h4></div>
-						  	<div class="card-body">
+					<a href="<?php echo base_url();?>about" title="" class="text-decoration-none">
+						<div class="card text-white mb-2">
+						  	<div class="card-header main-bg"><h4 class="m-0">About TECN</h4></div>
+						  	<div class="card-body sub-bg">
 						    	<img src="<?php echo base_url();?>assets/images/logo-only.png" alt="TECN">
 						  	</div>
 						</div>
@@ -74,9 +80,9 @@
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 				<div class="main-four-links-single">
 					<a href="#" title="" class="text-decoration-none">
-						<div class="card text-white bg-secondary mb-2">
-						  	<div class="card-header"><h4 class="m-0">Administration</h4></div>
-						  	<div class="card-body">
+						<div class="card text-white mb-2">
+						  	<div class="card-header main-bg"><h4 class="m-0">Administration</h4></div>
+						  	<div class="card-body sub-bg">
 						    	<i class="fas fa-hotel"></i>
 						  	</div>
 						</div>
@@ -86,9 +92,9 @@
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 				<div class="main-four-links-single">
 					<a href="#" title="" class="text-decoration-none">
-						<div class="card text-white bg-secondary mb-2">
-						  	<div class="card-header"><h4 class="m-0">Library</h4></div>
-						  	<div class="card-body">
+						<div class="card text-white mb-2">
+						  	<div class="card-header main-bg"><h4 class="m-0">Library</h4></div>
+						  	<div class="card-body sub-bg">
 						    	<i class="fas fa-book-open"></i>
 						  	</div>
 						</div>
@@ -98,9 +104,9 @@
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 				<div class="main-four-links-single">
 					<a href="#" title="" class="text-decoration-none">
-						<div class="card text-white bg-secondary mb-2">
-						  	<div class="card-header"><h4 class="m-0">Mission & Vision</h4></div>
-						  	<div class="card-body">
+						<div class="card text-white mb-2">
+						  	<div class="card-header main-bg"><h4 class="m-0">Mission & Vision</h4></div>
+						  	<div class="card-body sub-bg">
 						    	<i class="fas fa-road"></i>
 						  	</div>
 						</div>
@@ -152,7 +158,7 @@
 		<div class="row">
 			<div class="col-md-8">
 				<div class="card text-dark bg-default mb-3">
-					<div class="card-header text-center text-light bg-dark">
+					<div class="card-header text-center text-light main-bg">
 						<h5 class="mb-0">News & Events</h5>
 					</div>
 					<div class="card-body p-0">
@@ -176,7 +182,7 @@
 			</div>
 			<div class="col-md-4">
 				<div class="card text-dark bg-default mb-3">
-					<div class="card-header text-center text-light bg-dark">
+					<div class="card-header text-center text-light main-bg">
 						<h5 class="mb-0">Notice Board</h5>
 					</div>
 					<div class="card-body p-0">
@@ -211,69 +217,84 @@
 	<div class="container">
 		<div class="owl-carousel">
 			<div class="dept-area-single"> 
-				<div class="dept-area-img">
-		      		<img src="<?php echo base_url();?>assets/images/dept/ame.jpg" />
-				</div>
-				<div class="dept-area-title">
-					Apparel Manufacturing Engineering
-				</div>
+				<a href="<?php echo base_url();?>dept/ame" title="Apparel Manufacturing Engineering">
+					<div class="dept-area-img">
+			      		<img src="<?php echo base_url();?>assets/images/dept/ame.jpg" />
+					</div>
+					<div class="dept-area-title">
+						Apparel Manufacturing Engineering
+					</div>
+				</a>
 			 </div>
 			<div class="dept-area-single"> 
-				<div class="dept-area-img">
-		      		<img src="<?php echo base_url();?>assets/images/dept/cse_home.jpg" />
-				</div>
-				<div class="dept-area-title">
-					Fabric Manufacturing Engineering
-				</div>
+				<a href="<?php echo base_url();?>dept/fme" title="Fabric Manufacturing Engineering">
+					<div class="dept-area-img">
+			      		<img src="<?php echo base_url();?>assets/images/dept/cse_home.jpg" />
+					</div>
+					<div class="dept-area-title">
+						Fabric Manufacturing Engineering
+					</div>
+				</a>
+			 </div>
+			<div class="dept-area-single">
+				<a href="<?php echo base_url();?>dept/wpe" title="Wet Processing Engineering">
+					<div class="dept-area-img">
+			      		<img src="<?php echo base_url();?>assets/images/dept/cwre_home.jpg" />
+					</div>
+					<div class="dept-area-title">
+						Wet Processing Engineering
+					</div>
+				</a>
+			</div>
+			<div class="dept-area-single"> 
+				<a href="<?php echo base_url();?>dept/yme" title="Yarn Manufacturing Engineering">
+					<div class="dept-area-img">
+			      		<img src="<?php echo base_url();?>assets/images/dept/preeng_home.jpg" />
+					</div>
+					<div class="dept-area-title">
+						Yarn Manufacturing Engineering
+					</div>
+				</a>
 			 </div>
 			<div class="dept-area-single"> 
-				<div class="dept-area-img">
-		      		<img src="<?php echo base_url();?>assets/images/dept/cwre_home.jpg" />
-				</div>
-				<div class="dept-area-title">
-					Wet Processing Engineering
-				</div>
+				<a href="<?php echo base_url();?>dept/ame" title="Apparel Manufacturing Engineering">
+					<div class="dept-area-img">
+			      		<img src="<?php echo base_url();?>assets/images/dept/ame.jpg" />
+					</div>
+					<div class="dept-area-title">
+						Apparel Manufacturing Engineering
+					</div>
+				</a>
 			 </div>
 			<div class="dept-area-single"> 
-				<div class="dept-area-img">
-		      		<img src="<?php echo base_url();?>assets/images/dept/preeng_home.jpg" />
-				</div>
-				<div class="dept-area-title">
-					Yarn Manufacturing Engineering
-				</div>
+				<a href="<?php echo base_url();?>dept/fme" title="Fabric Manufacturing Engineering">
+					<div class="dept-area-img">
+			      		<img src="<?php echo base_url();?>assets/images/dept/cse_home.jpg" />
+					</div>
+					<div class="dept-area-title">
+						Fabric Manufacturing Engineering
+					</div>
+				</a>
 			 </div>
-
+			<div class="dept-area-single">
+				<a href="<?php echo base_url();?>dept/wpe" title="Wet Processing Engineering">
+					<div class="dept-area-img">
+			      		<img src="<?php echo base_url();?>assets/images/dept/cwre_home.jpg" />
+					</div>
+					<div class="dept-area-title">
+						Wet Processing Engineering
+					</div>
+				</a>
+			</div>
 			<div class="dept-area-single"> 
-				<div class="dept-area-img">
-		      		<img src="<?php echo base_url();?>assets/images/dept/ame.jpg" />
-				</div>
-				<div class="dept-area-title">
-					Apparel Manufacturing Engineering
-				</div>
-			 </div>
-			<div class="dept-area-single"> 
-				<div class="dept-area-img">
-		      		<img src="<?php echo base_url();?>assets/images/dept/cse_home.jpg" />
-				</div>
-				<div class="dept-area-title">
-					Fabric Manufacturing Engineering
-				</div>
-			 </div>
-			<div class="dept-area-single"> 
-				<div class="dept-area-img">
-		      		<img src="<?php echo base_url();?>assets/images/dept/cwre_home.jpg" />
-				</div>
-				<div class="dept-area-title">
-					Wet Processing Engineering
-				</div>
-			 </div>
-			<div class="dept-area-single"> 
-				<div class="dept-area-img">
-		      		<img src="<?php echo base_url();?>assets/images/dept/preeng_home.jpg" />
-				</div>
-				<div class="dept-area-title">
-					Yarn Manufacturing Engineering
-				</div>
+				<a href="<?php echo base_url();?>dept/yme" title="Yarn Manufacturing Engineering">
+					<div class="dept-area-img">
+			      		<img src="<?php echo base_url();?>assets/images/dept/preeng_home.jpg" />
+					</div>
+					<div class="dept-area-title">
+						Yarn Manufacturing Engineering
+					</div>
+				</a>
 			 </div>
 		</div>
   </div>

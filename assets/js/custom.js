@@ -12,9 +12,6 @@ $(window).on("load",function() {
 	});
 	/* end fixed top header on scroll*/
 
-
-
-
 	jQuery(".loading").fadeOut();
     jQuery(".loading-in").delay(2000).fadeOut("slow");
 
@@ -31,6 +28,12 @@ $(window).on("load",function() {
                target_flexslider.removeClass('loading');
            }
 	});
+   /* slider-notice-scroll */
+   $("#scroller:first").simplyScroll({
+   		orientation: 'vertical',
+      	pauseOnHover: true
+    });
+   /* end slider-notice-scroll */
 
 	/*$('.flexslider').flexslider({
 		animation: "slide"
@@ -78,8 +81,11 @@ $(window).on("load",function() {
 	$(document).ready(function() {
 		$('#notice-card-right-body-table').DataTable( {
 	        select: true
-	    } );
-	} );
+	    });
+		$('#all-notice').DataTable( {
+	        select: true
+	    });
+	});
 	
 	/* end page notice-board */
 });

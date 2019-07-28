@@ -64,7 +64,8 @@ button {
 }
 
 input[type="file"] {
-    height: auto;
+    /*height: auto;*/
+    height: 40px;
 }
 
 input[type=text],
@@ -721,14 +722,16 @@ table.table td h2 span {
 */
 
 .header {
-    background-color: #1d6ad2;
+    /*background-color: #1d6ad2;*/
+    background-color: #141D5B;
     left: 0;
     position: fixed;
     right: 0;
     top: 0;
     z-index: 1001;
     height: 60px;
-    border-bottom: 1px solid #1d6ad2;
+    /*border-bottom: 1px solid #1d6ad2;*/
+    border-bottom: 1px solid #141D5B;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 

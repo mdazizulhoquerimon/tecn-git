@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets-admin/css/fullcalendar.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets-admin/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets-admin/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets-admin/css/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets-admin/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets-admin/css/style.css">
     <!--[if lt IE 9]>
@@ -20,7 +21,9 @@
 		<script src="<?php echo base_url();?>assets-admin/js/respond.min.js"></script>
 	<![endif]-->
 </head>
-
+<script>
+  var base_url = '<?php echo base_url(); ?>';  
+</script>
 <body>
     <div class="main-wrapper">
         <div class="header">
@@ -38,11 +41,11 @@
                     <a href="<?php echo base_url();?>admin/profile" class="dropdown-toggle user-link" data-toggle="dropdown" title="Admin">
                         <span class="user-img"><img class="img-circle" src="<?php echo base_url();?>assets-admin/img/user.jpg" width="40" alt="Admin">
 							<span class="status online"></span></span>
-                        <span>admin</span>
+                        <span><?php echo $this->common->getSpecificField('password','id',$this->common->user_session_data(1),'username');?></span>
                         <i class="caret"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="<?php echo base_url();?>admin/login">Logout</a></li>
+                        <li><a href="<?php echo base_url();?>login/logout">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -60,33 +63,40 @@
                         <li>
                             <a href="<?php echo base_url();?>admin"><i class="fa fa-dashboard"></i> Dashboard</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="<?php echo base_url();?>admin/notice"><i class="fa fa-list" aria-hidden="true"></i> <span> Notice</span></a>
-                        </li>
+                        </li> -->
                         <li class="submenu">
-                            <a href="#"><i class="fa fa-laptop" aria-hidden="true"></i> <span> Components</span> <span class="menu-arrow"></span></a>
+                            <a href="<?php echo base_url();?>admin/notice"><i class="fa fa-list" aria-hidden="true"></i> <span> Notice</span> <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled" style="display: none;">
-                                <li><a href="<?php echo base_url();?>admin/demo/uikit.php">UI Kit</a></li>
-                                <li><a href="<?php echo base_url();?>admin/demo/tabs.php">Tabs</a></li>
+                                <li><a href="<?php echo base_url();?>admin/notice">All Notice</a></li>
+                                <li><a href="<?php echo base_url();?>admin/new_notice">Notice Add</a></li>
                             </ul>
                         </li>
                         <li class="submenu">
-                            <a href="#"><i class="fa fa-edit" aria-hidden="true"></i> <span> Forms</span> <span class="menu-arrow"></span></a>
+                            <a href="<?php echo base_url();?>admin/teacher"><i class="fa fa-user" aria-hidden="true"></i> <span> Teacher</span> <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled" style="display: none;">
-                                <li><a href="<?php echo base_url();?>admin/demo/form-basic-inputs.php">Basic Inputs</a></li>
-                                <li><a href="<?php echo base_url();?>admin/demo/form-input-groups.php">Input Groups</a></li>
-                                <li><a href="<?php echo base_url();?>admin/demo/form-horizontal.php">Horizontal Form</a></li>
-                                <li><a href="<?php echo base_url();?>admin/demo/form-vertical.php">Vertical Form</a></li>
+                                <li><a href="<?php echo base_url();?>admin/teacher">All Teacher</a></li>
+                                <li><a href="<?php echo base_url();?>admin/add_teacher">New Teacher Add</a></li>
                             </ul>
                         </li>
                         <li class="submenu">
-                            <a href="#"><i class="fa fa-table" aria-hidden="true"></i> <span> Tables</span> <span class="menu-arrow"></span></a>
+                            <a href="#"><i class="fa fa-users" aria-hidden="true"></i> <span> Students</span> <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled" style="display: none;">
-                                <li><a href="<?php echo base_url();?>admin/demo/tables-basic.php">Basic Tables</a></li>
-                                <li><a href="<?php echo base_url();?>admin/demo/tables-datatables.php">Data Table</a></li>
+                                <li><a href="<?php echo base_url();?>admin/student">Current Students</a></li>
+                                <li><a href="<?php echo base_url();?>admin/add_student">Add New Student</a></li>
+                                <li><a href="<?php echo base_url();?>admin/student_join_request">Student Join Request</a></li>
                             </ul>
                         </li>
                         <li class="submenu">
+                            <a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> <span> Alumni</span> <span class="menu-arrow"></span></a>
+                            <ul class="list-unstyled" style="display: none;">
+                                <li><a href="<?php echo base_url();?>admin/alumni">All Alumni</a></li>
+                                <li><a href="<?php echo base_url();?>admin/add_alumni">Add New Alumni</a></li>
+                                <li><a href="<?php echo base_url();?>admin/add_alumni">Alumni Join Request</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li class="submenu">
                             <a href="#"><i class="fa fa-columns" aria-hidden="true"></i> <span>Pages</span> <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled" style="display: none;">
                                 <li><a href="<?php echo base_url();?>admin/demo/login.php"> Login </a></li>
@@ -115,7 +125,7 @@
                                     <a href="javascript:void(0);"><span>Level 1</span></a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
