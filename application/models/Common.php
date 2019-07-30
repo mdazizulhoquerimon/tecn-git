@@ -28,6 +28,11 @@ class Common extends CI_Model {
 			return 0;
 		}
 	}
+
+	public function mobileNumberCheck($value)
+	{
+		# code...
+	}
 	public function getAll($table,$col = null, $val = null, $col2=null, $val2=null, $asc_field = null, $asc_type = null)
 	{
 

@@ -39,7 +39,7 @@
 				   			<div class="notice-card-right">
 				   				<div class="tab-content" id="nav-tabContent">
 							      	<div class="tab-pane fade show active" id="news_and_events" role="tabpanel" aria-labelledby="news_and_events">
-						   				<h5 class="notice-card-heading border-bottom text-center text-light bg-dark pb-2 mb-4">News & Events</h5>
+						   				<h5 class="notice-card-heading border-bottom text-center text-light main-bg pb-2 mb-4">News & Events</h5>
 						   				<div class="notice-card-right-body">
 											<table id="notice-card-right-body-table" class="notice-card-right-body-table display w-100 dataTable table-bordered">
 										        <thead>
@@ -70,7 +70,7 @@
 							      	</div>
 						      		<!-- start Upcoming Events -->
 						      		<div class="tab-pane fade" id="notice" role="tabpanel" aria-labelledby="notice">
-						   				<h5 class="notice-card-heading border-bottom text-center text-light bg-dark pb-2 mb-4">Notice</h5>
+						   				<h5 class="notice-card-heading border-bottom text-center text-light main-bg pb-2 mb-4">Notice</h5>
 						   				<div class="notice-card-right-body">
 											<table id="all-notice" class="notice-card-right-body-table display w-100 dataTable table-bordered">
 										        <thead>
@@ -102,7 +102,7 @@
 							      	<!-- end Upcoming Events -->
 							      	<div class="tab-pane fade" id="downloads" role="tabpanel" aria-labelledby="downloads">
 										
-										<h5 class="notice-card-heading border-bottom text-center text-light bg-dark pb-2 mb-4">Downloads</h5>
+										<h5 class="notice-card-heading border-bottom text-center text-light main-bg pb-2 mb-4">Downloads</h5>
 						   				<div class="notice-card-right-body">
 											<table id="all-notice-download" class="notice-card-right-body-table display w-100 dataTable table-bordered">
 										        <tbody>

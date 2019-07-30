@@ -24,7 +24,7 @@ class Alumni extends CI_Controller {
 		//echo $this->db->last_query();
 
 		$this->load->view('public/head');
-		$this->load->view('public/header');
+		$this->load->view('public/alumni/alumni-header');
 		$this->load->view('public/alumni/login',$data);
 		$this->load->view('public/footer');
 	}

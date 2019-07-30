@@ -96,6 +96,13 @@
                                 <li><a href="<?php echo base_url();?>admin/add_alumni">Alumni Join Request</a></li>
                             </ul>
                         </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <span> Staffs</span> <span class="menu-arrow"></span></a>
+                            <ul class="list-unstyled" style="display: none;">
+                                <li><a href="<?php echo base_url();?>admin/staff">All Staffs</a></li>
+                                <li><a href="<?php echo base_url();?>admin/add_staff">Add New Staff</a></li>
+                            </ul>
+                        </li>
                         <!-- <li class="submenu">
                             <a href="#"><i class="fa fa-columns" aria-hidden="true"></i> <span>Pages</span> <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled" style="display: none;">

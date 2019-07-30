@@ -32,6 +32,9 @@
 		   				<div class="single-notice-body-desccription">
 		   					<?php echo $s['description'];?>
 		   				</div>	
+		   				<div class="single-notice-body-image">
+		   					<img src="<?php echo base_url();?>assets/images/notice/<?php echo $s['image'];?>" alt="asdf">
+		   				</div>	
 		   			</div>
 		   			<?php
 		   			}

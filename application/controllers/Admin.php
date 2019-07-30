@@ -87,11 +87,13 @@ class Admin extends CI_Controller{
 	    $notice_descr =  $this->form_validation->set_rules('description', 'Notice Description is', 'required');
 	    //$this->form_validation->set_rules('notice-image', 'Notice image', 'required');
 	    $notice_date = $this->form_validation->set_rules('notice-date', 'Notice Date is', 'required');
-/*
+		
+
+		/*
 		if(empty($notice_title))
 			redirect('notice');
 
-*/
+		*/
 	    $data['success'] = '';
 
 	    if ($this->form_validation->run() === FALSE)
@@ -104,7 +106,49 @@ class Admin extends CI_Controller{
 	    else
 	    {
 	    	$data['success'] = 1;
-	        $this->admin_model->insert_notice();
+	    	$notice_info = array(
+		        'notice_type' => $this->input->post('notice_type'),
+		        'title' => $this->input->post('title'),
+		        'title' => $this->input->post('title'),
+		        //'slug' => $slug,
+		        'description' => $this->input->post('description'),
+		        'date' => date('Y-m-d',strtotime($this->input->post('notice-date'))),
+		        'date_time' => $this->input->post('notice-date')
+		    );
+
+	    	/*image upload*/
+	    	if ($_FILES['notice-image']['name'] !== ''){
+
+
+			$config['upload_path']          = './assets/images/notice/';
+	        $config['allowed_types']        = 'gif|jpg|png';
+	        $new_name = date('Ymd_his_').$_FILES["notice-image"]['name'];
+	        $config['file_name'] = $new_name;
+	       
+			$this->upload->initialize($config);
+	        
+
+	        if ( ! $this->upload->do_upload('notice-image'))
+	        {
+
+		    		$data['success'] = $this->upload->display_errors();
+	                
+		        	redirect('admin/notice');
+	        }
+	        else
+	        {
+	                $data = array('upload_data' => $this->upload->data());
+	                 
+	                $notice_info['image'] = $data['upload_data']['file_name'];
+	        }
+
+	    	}else{
+	    		unset($notice_info['image']);
+	    	}
+		/*image upload*/
+
+	   
+	        $this->db->insert('notice', $notice_info);
 	        redirect('admin/notice');
 	    }
 	}
@@ -359,13 +403,118 @@ class Admin extends CI_Controller{
 	        );
 	        $this->db->insert('alumni', $alumni_table);
 
-
-
-
 	        redirect('admin/alumni');
 	    }
 	}
 
+	public function staff(){
+		$id = $this->common->user_session_data(1);
+		$user_type = $this->common->user_session_data(2);
+		if(empty($id))
+			redirect(base_url().'login');
+
+		$data['all_staff'] = $this->common->getAll('staffs');
+
+		$this->load->view('admin/header');
+		$this->load->view('admin/staff/all_staff',$data);
+		$this->load->view('admin/footer');
+	}
+	public function add_staff(){
+		$id = $this->common->user_session_data(1);
+		$user_type = $this->common->user_session_data(2);
+		if(empty($id))
+			redirect(base_url().'login');
+		$data['success'] = 0;
+
+		$this->db->where('trash',0);
+		$this->db->where('status',1);
+		$data['all_dept'] = $this->db->get('dept')->result_array();
+
+		
+		$this->load->view('admin/header');
+		$this->load->view('admin/staff/add_staff',$data);
+		$this->load->view('admin/footer');
+	}
+	public function insert_staff(){
+		$id = $this->common->user_session_data(1);
+		$user_type = $this->common->user_session_data(2);
+		if(empty($id))
+			redirect(base_url().'login');
+
+
+		$this->db->where('trash',0);
+		$this->db->where('status',1);
+		//$this->db->where('id !=',1);
+		$data['all_dept'] = $this->db->get('dept')->result_array();
+		$data['designation'] = $this->common->getAll('designation','type',3);
+
+        $datetime= date('Ymdhis');
+
+        $name = $this->form_validation->set_rules('name', 'Name is', 'required');
+        $phone = $this->form_validation->set_rules('phone', 'Phone', 'required');
+        //$this->form_validation->set_rules('pass', 'Password', 'required');
+		//$this->form_validation->set_rules('con_pass', 'Confirm Password', 'required|matches[password]');
+
+        if ($this->form_validation->run() === FALSE)
+	    {
+	    	$data['success'] = 0;
+	        $this->load->view('admin/header', $data);
+	        $this->load->view('admin/staff/add_staff',$data);
+	        $this->load->view('admin/footer');
+	    }
+	    else
+	    {
+	    	$data['success'] = 1;
+	        $this->admin_model->add_staff();
+
+	        $staff_id = $this->common->getSpecificField('staffs','phone',$this->input->post('phone'),'id');
+
+	        $pass = $this->input->post('pass');
+	        $pass_hash = md5(sha1(md5($pass)));
+	        $data2 = array(
+	        	'user_type' => 3,
+	        	'user_id' => $staff_id,
+	        	'username' => $this->input->post('name'),
+	        	'email' => $this->input->post('email'),
+	        	'mobile' => $this->input->post('phone'),
+	        	'pass_hash' => $pass_hash,
+	        	'pass_view' => $pass
+	        );
+	        $this->db->insert('password', $data2);
+
+	        redirect('admin/staff');
+	    }
+	}
+	public function testUpload()
+	{
+	        $this->load->view('admin/header');
+	        $this->load->view('admin/test');
+	        $this->load->view('admin/footer');
+	}
+	public function do_upload()
+        {
+                $config['upload_path']          = './assets/';
+                $config['allowed_types']        = 'gif|jpg|png';
+               
+				$this->upload->initialize($config);
+                
+
+                if ( ! $this->upload->do_upload('userfile'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                        $this->load->view('admin/header');
+	        			$this->load->view('admin/test');
+	        			$this->load->view('admin/footer');
+                }
+                else
+                {
+                        $data = array('sss' => $this->upload->data());
+
+                        echo "<pre>";
+                        print_r($data['sss']['file_name']);
+                }
+        }
 }
 
 ?>

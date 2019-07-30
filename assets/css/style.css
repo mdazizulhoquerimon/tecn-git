@@ -352,6 +352,7 @@ body{
     color: #333;
 }
 .dept-area-img {
+    transition: all 0.2s ease;
     border-radius: 50%;
     overflow: hidden;
     border: 4px dotted #fff;
@@ -361,6 +362,7 @@ body{
 .dept-area-single a:hover  .dept-area-img {
     box-shadow: 0px 0px 2px #333;
     -webkit-box-shadow: 0px 0px 2px #333;
+    border-radius: 0;
 }
 .dept-area-title {
     padding: 25px 0 0;
@@ -527,6 +529,13 @@ body{
 
 
 /* == Alumni area == */
+.alumni-login-area {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.alumni-login-logo {
+    padding-bottom: 15px;
+}
 .form-signin {
   width: 100%;
   max-width: 330px;

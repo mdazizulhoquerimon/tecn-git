@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Textile Engineering College Noakhali</title>
+	<title>TECN Alumni Association</title>
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url();?>assets/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url();?>assets/images/favicon/favicon-32x32.png">
@@ -19,7 +19,6 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/datatables.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/flexslider.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/jquery.fancybox.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/owl.carousel.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/animate.css">
@@ -34,12 +33,11 @@
     <script src="<?php echo base_url();?>assets/js/jquery-ui.min.js"></script>
 	<script src="<?php echo base_url();?>assets/js/swiper.min.js"></script>
 	<script src="<?php echo base_url();?>assets/js/uikit.min.js"></script>
-	<script src="<?php echo base_url();?>assets/js/jquery.fancybox.min.js"></script>
 	<script src="<?php echo base_url();?>assets/js/jquery.dataTables.min.js"></script>
 	<script src="<?php echo base_url();?>assets/js/datatables.min.js"></script>
 	<script src="<?php echo base_url();?>assets/js/owl.carousel.min.js"></script>
 	<script src="<?php echo base_url();?>assets/js/jquery.flexslider-min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/custom.js"></script>
+    <script src="<?php echo base_url();?>assets/js/alumni.js"></script>
 </head>
 <body>
 	<div class="loading">
